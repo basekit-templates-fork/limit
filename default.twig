@@ -1,0 +1,63 @@
+{% extends "layout.twig" %}
+{% block content %}
+
+<div class="bk-default">
+
+	<header class="bk-header">
+		<div class="wrapper">
+			<div class="brand">
+				{{widget('logo', 'header-logo', {"defaultlogo": asset('images/logo.png')})|raw}}
+				{{widget('companyname', 'homepage-companyname', {"business": "profile"})|raw}}
+			</div>
+			<div class="header-phone">
+				{% if profile.phone|length > 0 %}
+                   {{widget('clicktocall', 'headerclicktocall', {})|raw}}
+                {% endif %}
+			</div>
+			{{widget('extendednavigation', 'header-navigation', {"align":"left"})|raw}}
+		</div>
+	</header>
+	<div class="page-title">
+		<div class="wrapper">
+			{{widget('pagetitle', 'title', {})|raw}}
+		</div>
+	</div>
+
+	<!-- Page Content -->
+	<div class="container">
+		<section class="wrapper">
+			<!-- Main Widget Zone -->
+			<section class="main-zone">
+				{{zone('main')|raw}}
+			</section>
+		</section>
+	</div>
+	<!-- End Page Content -->
+
+	<div class="bk-footer">
+		<div class="footer-one">
+			<div class="footer-container-one">
+				<div class="one-left">
+					{{widget('content', 'footercontentleft', {content: '<p>Lorem Ipsum Dolor.</p>', lines: 'all'})|raw}}
+				</div>
+				<div class="one-right">
+					{{widget('content', 'footercontentright', {content: '<p>Lorem Ipsum Dolor.</p>', lines: 'all'})|raw}}
+				</div>
+			</div>
+		</div>
+		<div class="footer-two">
+			<div class="footer-container-two">
+				<div class="two-left">
+					{{widget('profile', 'copyright', { 'profileType':'copyright'})|raw}}
+				</div>
+				<div class="two-right">
+					{{widget('profile', 'socialicons', { 'profileType':'socialicons', 'socialicons':'profile'})|raw}}
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</div><!-- end bk-default-home -->
+
+{% endblock %}
