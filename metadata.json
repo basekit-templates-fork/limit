@@ -1,7 +1,7 @@
 {
     "name": "Limit",
     "thumbnail": "limit.png",
-    "screenshot":"limit.png",
+    "screenshot":"limit-screenshot.png",
     "templateType":"standard",
     "images":["/images/feature-bg.jpg"],
     "pageTypes":["home"],
